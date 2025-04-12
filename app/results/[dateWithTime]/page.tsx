@@ -232,10 +232,16 @@ export default async function ResultPage({
               "description": `Daily Millions ${drawType} Draw results for ${formattedDate}. Winning numbers: ${standardGame.grids[0].standard[0].join(", ")} plus bonus ${standardGame.grids[0].additional[0][0]}.`,
               "startDate": drawDate.toISOString(),
               "endDate": drawDate.toISOString(),
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+              "image": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/DailyMillions-OG.webp`,
               "location": {
-                "@type": "VirtualLocation",
+                "@type": "Place",
                 "name": "Daily Millions Lottery Draw",
-                "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/results/${dateStr}-${timeStr}`
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "Ireland"
+                }
               },
               "organizer": {
                 "@type": "Organization",
@@ -251,7 +257,8 @@ export default async function ResultPage({
                 "price": "1",
                 "priceCurrency": "EUR",
                 "availability": "https://schema.org/InStock",
-                "validFrom": drawDate.toISOString()
+                "validFrom": drawDate.toISOString(),
+                "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/results/${dateStr}-${timeStr}`
               },
               "result": {
                 "@type": "ItemList",
