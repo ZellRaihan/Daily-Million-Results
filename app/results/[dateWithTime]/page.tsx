@@ -236,14 +236,8 @@ export default async function ResultPage({
               "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
               "image": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/DailyMillions-OG.webp`,
               "location": {
-                "@type": "Place",
-                "name": "Daily Millions Lottery Draw",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Dublin",
-                  "addressRegion": "Dublin",
-                  "addressCountry": "IE"
-                }
+                "@type": "VirtualLocation",
+                "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/results/${dateStr}-${timeStr}`
               },
               "organizer": {
                 "@type": "Organization",
