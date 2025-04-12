@@ -221,6 +221,7 @@ export default async function HomePage() {
       "@type": "Event",
       "name": "Daily Millions Afternoon Draw",
       "startDate": afternoonDraw.standard.drawDates[0],
+      "endDate": afternoonDraw.standard.drawDates[0], 
       "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventScheduled",
       "location": {
@@ -228,17 +229,23 @@ export default async function HomePage() {
         "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/results/${formatDateWithTimeForUrl(new Date(afternoonDraw.standard.drawDates[0]))}`
       },
       "description": `Daily Millions Afternoon Draw Results for ${formatDate(new Date(afternoonDraw.standard.drawDates[0]))}`,
+      "image": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/DailyMillions-OG.webp`,
+      "performer": {
+        "@type": "Organization",
+        "name": "Daily Millions"
+      },
       "offers": {
         "@type": "Offer",
         "price": "1",
         "priceCurrency": "EUR",
         "availability": "https://schema.org/InStock",
-        "validFrom": "2020-01-01T00:00:00.000Z"
+        "validFrom": "2020-01-01T00:00:00.000Z",
+        "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/results/${formatDateWithTimeForUrl(new Date(afternoonDraw.standard.drawDates[0]))}`
       },
       "organizer": {
         "@type": "Organization",
-        "name": "Irish National Lottery",
-        "url": "https://www.lottery.ie/"
+        "name": "Daily Millions",
+        "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}`
       }
     },
     eveningDraw && {
@@ -246,6 +253,7 @@ export default async function HomePage() {
       "@type": "Event",
       "name": "Daily Millions Evening Draw",
       "startDate": eveningDraw.standard.drawDates[0],
+      "endDate": eveningDraw.standard.drawDates[0],
       "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventScheduled",
       "location": {
@@ -253,17 +261,23 @@ export default async function HomePage() {
         "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/results/${formatDateWithTimeForUrl(new Date(eveningDraw.standard.drawDates[0]))}`
       },
       "description": `Daily Millions Evening Draw Results for ${formatDate(new Date(eveningDraw.standard.drawDates[0]))}`,
+      "image": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/DailyMillions-OG.webp`,
+      "performer": {
+        "@type": "Organization",
+        "name": "Daily Millions"
+      },
       "offers": {
         "@type": "Offer",
         "price": "1",
         "priceCurrency": "EUR",
         "availability": "https://schema.org/InStock",
-        "validFrom": "2020-01-01T00:00:00.000Z"
+        "validFrom": "2020-01-01T00:00:00.000Z",
+        "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}/results/${formatDateWithTimeForUrl(new Date(eveningDraw.standard.drawDates[0]))}`
       },
       "organizer": {
         "@type": "Organization",
-        "name": "Irish National Lottery",
-        "url": "https://www.lottery.ie/"
+        "name": "Daily Millions",
+        "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}`
       }
     },
     {
@@ -704,16 +718,7 @@ export default async function HomePage() {
             <p className="mb-4">
               Daily Millions is Ireland's popular lottery game that gives players the chance to win €1,000,000 twice
               daily, seven days a week. With draws at 2pm and 9pm every day, Daily Millions offers more opportunities to
-              become a millionaire than any other Irish lottery game. For more information about Irish lotteries, visit the{" "}
-              <a 
-                href="https://www.lottery.ie/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline font-medium"
-              >
-                Irish National Lottery
-              </a>{" "}
-              official website.
+              become a millionaire than any other Irish lottery game.
             </p>
 
             <h3 className="text-base font-semibold mb-3">How to Play Daily Millions</h3>

@@ -26,6 +26,10 @@ export function DatePicker({ initialDate, className, showIcon = false }: DatePic
     setIsOpen(false)
 
     if (selectedDate) {
+      // Manually dispatch a navigation start event to show loading state
+      const startEvent = new Event('navigationStart')
+      document.dispatchEvent(startEvent)
+      
       // Format the date as YYYY-MM-DD for the URL
       // We use the exact date selected in the calendar without any timezone adjustments
       const year = selectedDate.getFullYear()
@@ -36,6 +40,7 @@ export function DatePicker({ initialDate, className, showIcon = false }: DatePic
       // Default to 9pm (evening draw) for better user experience
       const formattedDateWithTime = `${formattedDate}-9pm`
 
+      // Navigate to the results page
       router.push(`/results/${formattedDateWithTime}`)
     }
   }

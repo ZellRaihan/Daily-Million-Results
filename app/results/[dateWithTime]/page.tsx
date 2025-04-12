@@ -239,8 +239,8 @@ export default async function ResultPage({
               },
               "organizer": {
                 "@type": "Organization",
-                "name": "Irish National Lottery",
-                "url": "https://www.lottery.ie"
+                "name": "Daily Millions Lottery",
+                "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://dailymillions.ie"}`
               },
               "performer": {
                 "@type": "Organization",
