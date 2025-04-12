@@ -186,7 +186,7 @@ export default function RootLayout({
                     &copy; {new Date().getFullYear()} Daily Million Results. All rights reserved.
                   </p>
                   <p className="text-sm text-gray-600 mt-1">
-                    This is a demo website. Not affiliated with the official lottery.
+                    This is a results website. Not affiliated with the official lottery.
                   </p>
                 </div>
               </div>
