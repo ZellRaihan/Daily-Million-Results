@@ -39,10 +39,12 @@ const ITEMS_PER_PAGE = 5 // Number of dates to show per page
 export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: { page?: string }
+  searchParams: Promise<{ page?: string }> | { page?: string }
 }): Promise<Metadata> {
+  // Await the searchParams if it's a promise
+  const resolvedParams = await Promise.resolve(searchParams);
   // Get current page from query params or default to 1
-  const currentPage = Number(searchParams.page) || 1
+  const currentPage = Number(resolvedParams.page) || 1
   
   // Get latest results for potential use in meta description
   const results = await getLatestResults() as unknown as LotteryResult[]
@@ -115,11 +117,13 @@ export async function generateMetadata({
 export default async function HistoryPage({
   searchParams,
 }: {
-  searchParams: { page?: string }
+  searchParams: Promise<{ page?: string }> | { page?: string }
 }) {
   try {
+    // Await the searchParams if it's a promise
+    const resolvedParams = await Promise.resolve(searchParams);
     // Get current page from query params or default to 1
-    const currentPage = Number(searchParams.page) || 1
+    const currentPage = Number(resolvedParams.page) || 1
 
     // Fetch data on the server
     const results = (await getLatestResults() as unknown) as LotteryResult[]
