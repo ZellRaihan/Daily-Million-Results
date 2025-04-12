@@ -816,7 +816,7 @@ export default async function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" itemScope itemType="https://schema.org/FAQPage" className="bg-white px-4 py-12 w-full">
+      <section id="faq" className="bg-white px-4 py-12 w-full">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
           
