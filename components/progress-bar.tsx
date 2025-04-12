@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { usePathname, useSearchParams } from "next/navigation"
 
-export function ProgressBar() {
+// Separate component to use searchParams
+function ProgressBarWithParams() {
   const [progress, setProgress] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
   const pathname = usePathname()
@@ -70,5 +71,14 @@ export function ProgressBar() {
         }}
       />
     </div>
+  )
+}
+
+// Wrap the component that uses searchParams in Suspense
+export function ProgressBar() {
+  return (
+    <Suspense fallback={null}>
+      <ProgressBarWithParams />
+    </Suspense>
   )
 } 

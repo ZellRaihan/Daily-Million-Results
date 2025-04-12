@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 
-export function NavigationEvents() {
+// Separate component to use searchParams
+function NavigationEventsWithParams() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -28,4 +29,13 @@ export function NavigationEvents() {
   }, [pathname, searchParams])
 
   return null
+}
+
+// Wrap the component that uses searchParams in Suspense
+export function NavigationEvents() {
+  return (
+    <Suspense fallback={null}>
+      <NavigationEventsWithParams />
+    </Suspense>
+  )
 } 

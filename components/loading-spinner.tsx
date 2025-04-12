@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { usePathname, useSearchParams } from "next/navigation"
 import Image from "next/image"
 
-export function LoadingSpinner() {
+// Separate component to use searchParams
+function LoadingSpinnerWithParams() {
   const [isLoading, setIsLoading] = useState(false)
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -75,5 +76,14 @@ export function LoadingSpinner() {
         </div>
       </div>
     </div>
+  )
+}
+
+// Wrap the component that uses searchParams in Suspense
+export function LoadingSpinner() {
+  return (
+    <Suspense fallback={null}>
+      <LoadingSpinnerWithParams />
+    </Suspense>
   )
 } 
