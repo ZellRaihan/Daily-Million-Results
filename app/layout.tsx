@@ -5,6 +5,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Link from "next/link"
 import Image from "next/image"
 import { MobileMenu } from "@/components/mobile-menu"
+import { LoadingSpinner } from "@/components/loading-spinner"
+import { NavigationEvents } from "@/components/navigation-events"
+import { ProgressBar } from "@/components/progress-bar"
 import type { Metadata, Viewport } from "next"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -69,6 +72,9 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+          <LoadingSpinner />
+          <NavigationEvents />
+          <ProgressBar />
           <div className="flex min-h-screen flex-col bg-white">
             <header className="sticky top-0 z-10 bg-white shadow-sm">
               <div className="mx-auto max-w-[1200px] px-4 flex h-14 items-center">
