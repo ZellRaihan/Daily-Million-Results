@@ -240,6 +240,8 @@ export default async function ResultPage({
                 "name": "Daily Millions Lottery Draw",
                 "address": {
                   "@type": "PostalAddress",
+                  "addressLocality": "Dublin",
+                  "addressRegion": "Dublin",
                   "addressCountry": "Ireland"
                 }
               },
