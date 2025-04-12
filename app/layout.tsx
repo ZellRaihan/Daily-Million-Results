@@ -117,7 +117,7 @@ export default function RootLayout({
                   <div className="flex flex-col items-center">
                     <h3 className="font-semibold mb-3 text-gray-900">Daily Millions Results</h3>
                     <p className="text-sm text-gray-700 mb-4">
-                      Your source for the latest Daily Millions lottery results and information.
+                      Best website for the latest Daily Millions Results And information
                     </p>
                     <div className="flex items-center">
                       <Link href="/" className="flex items-center gap-2">
