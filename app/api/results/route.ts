@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server"
+import { unstable_noStore } from 'next/cache'
 import clientPromise from "@/lib/mongodb"
 import { CACHE_KEYS, getFromCache, setCache } from "@/lib/cache"
 
 export async function GET(request: Request) {
+  // Disable Next.js cache for this API route
+  unstable_noStore()
+  
   try {
     console.log("API Route: Starting request processing")
     const { searchParams } = new URL(request.url)

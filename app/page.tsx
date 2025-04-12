@@ -19,9 +19,13 @@ import { CalendarIcon, HistoryIcon, TrophyIcon, Clock, ArrowRight } from "lucide
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { ComingSoonResults } from "@/components/coming-soon-results"
 import { CountdownTimer } from "@/components/countdown-timer"
+import { unstable_noStore } from 'next/cache'
 
 // Add this function at the top level to fetch data once per request
 async function getSharedData() {
+  // Disable Next.js built-in caching for this request
+  unstable_noStore()
+  
   // Fetch data on the server
   const results = await getLatestResults()
 
