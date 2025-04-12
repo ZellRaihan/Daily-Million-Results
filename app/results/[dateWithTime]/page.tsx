@@ -242,7 +242,7 @@ export default async function ResultPage({
                   "@type": "PostalAddress",
                   "addressLocality": "Dublin",
                   "addressRegion": "Dublin",
-                  "addressCountry": "Ireland"
+                  "addressCountry": "IE"
                 }
               },
               "organizer": {
