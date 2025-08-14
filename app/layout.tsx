@@ -63,7 +63,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        
         <meta name="robots" content="index, follow" />
+     crossorigin="anonymous"></script>
+        
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider
