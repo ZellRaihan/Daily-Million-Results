@@ -65,6 +65,7 @@ export default function RootLayout({
       <head>
         
         <meta name="robots" content="index, follow" />
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4613688693542414"
      crossorigin="anonymous"></script>
         
       </head>
